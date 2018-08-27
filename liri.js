@@ -56,13 +56,15 @@ function movieThis(movie){
       }
   })
 }
-
+debugger
 function concertThis(band) {
   request("https://rest.bandsintown.com/artists/" + band + "/events?app_id=codingbootcamp", function (error, response, body) {
     // console.log("error",error)
     // console.log("response",response)
-    // console.log("body",body)
-    if (!error) {
+    console.log("band", band)
+    console.log("body",body)
+    
+    if (!error && response.statusCode == 200) {
       var bandArray = JSON.parse(body)
       bandArray.forEach(function (event) {
         console.log(event.venue.name)
