@@ -44,9 +44,9 @@ function spotifyThis(song) {
       } else {
         var response = data.tracks.items
         response.forEach(song => {
-          console.log(song.name)
-          console.log(song.artists[0].name)
-          console.log(song.album.name)
+          console.log("Song Name: ",song.name)
+          console.log("Song Artist(s): ",song.artists[0].name)
+          console.log("Album Name: ",song.album.name)
           console.log(song.href)
           console.log('----------------------$$$-----------------------')
         });
@@ -64,11 +64,11 @@ function movieThis(movie){
       console.log(movie);
       console.log("Year: " + JSON.parse(body).Year);
       console.log(movie + " has an IMBD rating of: " + JSON.parse(body).imdbRating);
-      console.log(movie + " has a Rotten Toamatoes rating of: " + JSON.parse(body).Ratings[1].Value);
       console.log(movie + " was produced in: " + JSON.parse(body).Country)
       console.log(movie + " Language: " + JSON.parse(body).Language);
       console.log(movie + " Plot: " + JSON.parse(body).Plot);
-      console.log(movie + " Actors: " + JSON.parse(body).Actors);   
+      console.log(movie + " Actor(s): " + JSON.parse(body).Actors);
+      console.log(movie + " has a Rotten Tomatoes rating of: " + JSON.parse(body).Ratings[1].Value); 
       // console.log(response);
       }
   })
