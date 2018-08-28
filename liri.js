@@ -119,7 +119,7 @@ function doWhatItSays(){
   });
 }
 
-fs.appendFile("log.txt", "[" + command + ", " + thing + "]", function(err) {
+fs.appendFile("log.txt", "[" + command + ", " + thing + "]\n", function(err) {
   if (err) {
     return console.log(err);
   }
