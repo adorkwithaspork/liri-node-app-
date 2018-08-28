@@ -64,7 +64,7 @@ function movieThis(movie){
       console.log(movie);
       console.log("Year: " + JSON.parse(body).Year);
       console.log(movie + " has an IMBD rating of: " + JSON.parse(body).imdbRating);
-      console.log(movie + " has a Rotten Toamatoes rating of: " + JSON.parse(body).Ratings[1].value);
+      console.log(movie + " has a Rotten Toamatoes rating of: " + JSON.parse(body).Ratings[1].Value);
       console.log(movie + " was produced in: " + JSON.parse(body).Country)
       console.log(movie + " Language: " + JSON.parse(body).Language);
       console.log(movie + " Plot: " + JSON.parse(body).Plot);
@@ -86,7 +86,7 @@ function concertThis(band) {
       bandArray.forEach(function (event) {
         console.log(event.venue.name)
         console.log(event.venue.city)
-        console.log(moment(event.datetime).format("MM DD YYYY HH: mm"))
+        console.log(moment(event.datetime).format("LLL"))
         console.log("-------------$$$$$$$$$$$$$$$--------------")
 
       })
@@ -119,3 +119,8 @@ function doWhatItSays(){
   });
 }
 
+fs.appendFile("log.txt", "[" + command + ", " + thing + "]", function(err) {
+  if (err) {
+    return console.log(err);
+  }
+});
